@@ -1,0 +1,23 @@
+{
+  "name": "01-variabler",
+  "version": "1.0.0",
+  "description": "Exempelprojekt för kursen Frontend 1: Javascript, Nackademin Höstterminen 2022",
+  "main": "./01-variabler/app.js",
+  "scripts": {
+    "start": "node ./01-variabler/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rymdpeter/frontend1-javascript.git"
+  },
+  "author": "Peter Karlsson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rymdpeter/frontend1-javascript/issues"
+  },
+  "homepage": "https://github.com/rymdpeter/frontend1-javascript#readme",
+  "devDependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
