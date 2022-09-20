@@ -1,11 +1,14 @@
 {
-  "name": "01-variabler",
-  "version": "1.0.0",
+  "name": "nackademin-frontend-1",
+  "version": "1.1.0",
   "description": "Exempelprojekt för kursen Frontend 1: Javascript, Nackademin Höstterminen 2022",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "square": "node 03-funktioner/index.js",
+    "groups": "node 04-objects-arrays/index.js",
+    "server": "node www/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +20,8 @@
     "url": "https://github.com/rymdpeter/frontend1-javascript/issues"
   },
   "homepage": "https://github.com/rymdpeter/frontend1-javascript#readme",
-  "devDependencies": {
-    "prompt-sync": "^4.2.0"
-  },
   "dependencies": {
-    "moment": "^2.29.4"
+    "dotenv": "^16.0.2",
+    "prompt-sync": "^4.2.0"
   }
 }
