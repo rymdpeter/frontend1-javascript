@@ -23,17 +23,6 @@ console.log("it's true!")
 })
 
 
-
-// x is a number
-// x = '1'; // x is a string
-// x = [1]; // x is an array
-// 1 == '1';
-// 1 == [1];
-// '1' == [1];
-// 1 === '1';
-// 1 === [1];
-// '1' === [1];
-
 // let age = parseInt(prompt("How old am I? ")) // TODO: typecheck
 // let birthday = prompt("Is it my birthday (y/n)?").trim().toLowerCase()
 

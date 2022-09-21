@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "square": "node 03-funktioner/index.js",
-    "groups": "node 04-objects-arrays/index.js",
+    "square": "node 03-funktioner/",
+    "groups": "node 04-objects-arrays/",
     "server": "node www/server.js"
   },
   "repository": {
@@ -22,6 +22,8 @@
   "homepage": "https://github.com/rymdpeter/frontend1-javascript#readme",
   "dependencies": {
     "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "open": "^8.4.0",
     "prompt-sync": "^4.2.0"
   }
 }

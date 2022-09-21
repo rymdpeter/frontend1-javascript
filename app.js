@@ -1,6 +1,4 @@
-// const subject03 = require("./03-funktioner")
-// const subject04 = require("./04-objects-arrays")
-
+console.clear()
 console.log(`
 Welcome to Frontend 1!
 Available examples:

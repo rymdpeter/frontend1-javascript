@@ -1,14 +1,29 @@
-var fs = require('fs'),
-    http = require('http');
+require("dotenv").config()
+const open = require("open")
+const express = require("express")
+const path = require("path")
 
-http.createServer(function (req, res) {
-  fs.readFile(__dirname + req.url, function (err,data) {
-    if (err) {
-      res.writeHead(404);
-      res.end(JSON.stringify(err));
-      return;
+const app = express(),
+    port = process.env.EXPRESS_PORT || 3000,
+    logger = function(req, res, next) {
+        console.log("serving " + req.path)
+        next()
     }
-    res.writeHead(200);
-    res.end(data);
-  });
-}).listen(3000);
+
+app.use(logger)
+
+app.use(express.static(path.join(__dirname, "public")))
+
+app.get('/api', (req, res) => {
+    
+  res.json({
+    "hello": "world"
+  })
+})
+
+
+
+app.listen(port, () => {
+  console.log(`Frontend app running on http://localhost:${port}`)
+  open(`http://localhost:${port}`)
+})

@@ -1,7 +1,8 @@
 // Functions can also be held as the value of a variable
 // They are called anonymous functions
 const square = function(x,y) {
-    return x * y
+    return calculateSquare(x,y)
+    // return x * y
 }
 
 function calculateSquare(x,y) {
