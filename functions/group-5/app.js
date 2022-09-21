@@ -1,5 +1,5 @@
 // Calling module prompt
-// const prompt = require( "prompt-sync" )()
+ const prompt = require( "prompt-sync" )()
 
 /****************************
  * FUNCTION DECLARATIONS
