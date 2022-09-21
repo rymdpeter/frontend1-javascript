@@ -1,12 +1,25 @@
-let randomNumber = Math.floor(Math.random() * 4 +1);
-const option = parseInt(prompt('Spel: programet väljer en random siffra 1-3, du ska gissa vilken siffra den valt (1-3): '))
-
-if (option == randomNumber) {
-    
-    console.log('rätt');
-    return
+function writeName(coolName) {
+  console.log(coolName);
 }
-else{
-  console.log('fel')
-  return
+
+writeName("Alex");
+
+let a = Math.floor(Math.random() * 2) + 1;
+
+switch (a) {
+  case 1:
+    require("./app2");
+    break;
+  case 2:
+    require("./app3");
+    break;
+  case 3:
+    require("./app4");
+    break;
+  case 4:
+    require("./app4");
+    break;
+  case 5:
+    require("./app5");
+    break;
 }
