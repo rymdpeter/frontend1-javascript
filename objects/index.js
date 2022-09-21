@@ -1,6 +1,6 @@
 
- // const students = require("./groups")
-const students = require("../data/groups")
+ const students = require("./groups")
+// const students = require("../data/groups")
 
 const allStudents = students.all // read students from imported module
 let ambitionDefined,

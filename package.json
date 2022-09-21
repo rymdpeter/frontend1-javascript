@@ -1,13 +1,12 @@
 {
-  "name": "nackademin-frontend-1",
+  "name": "nackademin-javascript-1__todo",
   "version": "1.1.0",
   "description": "Exempelprojekt för kursen Frontend 1: Javascript, Nackademin Höstterminen 2022",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "square": "node functions/group-3/", 
-    "square": "node functions/group-5/",
+    "square": "node functions/group-3/",
     "groups": "node objects/", 
     "server": "node www/server.js"
   },

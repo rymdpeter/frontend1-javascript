@@ -11,8 +11,8 @@ const calculate = require(path("./objects"))._calculate
 
 console.clear();
 console.log(`
-Welcome to Frontend 1!
-Available examples:
+JavaScript 1: TODO
+*** help ***
 Functions: square [x] [y]
 Students: students
 Student: student [index]
