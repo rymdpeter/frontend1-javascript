@@ -7,4 +7,4 @@ Det här är repot för Frontend 1: Javascript.
 ```
 $ npm install
 $ npm start
-``` 
+``` //
