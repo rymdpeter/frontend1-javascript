@@ -1,13 +1,10 @@
-// Functions can also be held as the value of a variable
-// They are called anonymous functions
-const square = function(x,y) {
-    return calculateSquare(x,y)
-    // return x * y
-}
-
-function calculateSquare(x,y) {
-    return x * y // The return value can be assigned
-}
-
-// anonymous functions can be passed as arguments and used in other modules
-exports.square = square
+const dennisRecept = () => {
+    console.log("Äggröra Recept:");
+    console.log("Steg 1. Kläck 2 ägg");
+    console.log("Steg 2. Häll äggen i stekpannan");
+    console.log("Steg 3. Rör om tills genomstekta");
+    console.log("Steg 4. Salt & Peppra efter smak");
+    console.log("Steg 5. Ät!");
+  };
+  exports.dennisRecept = dennisRecept;
+  
