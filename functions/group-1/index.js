@@ -6,9 +6,9 @@ let x,y // multiple variable declarations separated by comma
 // Not all functions have parameters and return values
 // we can still access variables and functions in the outer scope
 function GetArgumentsFromProcess() {
-    // console.log(process.argv)
+    console.log(process.argv)
     const args = process.argv.slice(2) // process.argv holds arguemnts passed from the terminal as an array
-    // console.log(args)
+    console.log(args)
     x = Number(args[0])
     y = Number(args[1])
     
