@@ -15,7 +15,6 @@ app.use(logger)
 app.use(express.static(path.join(__dirname, "public")))
 
 app.get('/api', (req, res) => {
-    
   res.json({
     "hello": "world"
   })
