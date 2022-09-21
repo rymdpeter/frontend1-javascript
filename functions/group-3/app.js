@@ -1,13 +1,12 @@
-// Functions can also be held as the value of a variable
-// They are called anonymous functions
-const square = function(x,y) {
-    return calculateSquare(x,y)
-    // return x * y
-}
+let randomNumber = Math.floor(Math.random() * 4 +1);
+const option = parseInt(prompt('Spel: programet väljer en random siffra 1-3, du ska gissa vilken siffra den valt (1-3): '))
 
-function calculateSquare(x,y) {
-    return x * y // The return value can be assigned
+if (option == randomNumber) {
+    
+    console.log('rätt');
+    return
 }
-
-// anonymous functions can be passed as arguments and used in other modules
-exports.square = square
+else{
+  console.log('fel')
+  return
+}
