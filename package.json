@@ -7,6 +7,7 @@
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "square": "node functions/group-1/", 
+    "group-6": "node functions/group-6",
     "groups": "node objects/", 
     "server": "node www/server.js"
   },
