@@ -12,4 +12,5 @@ modify the "scripts" segment of package.json to look like
 ```
 "square": "node functions/group-1"
 ```
+modify the files "app.js" and "index.js" to run the code you presented in class.
 
