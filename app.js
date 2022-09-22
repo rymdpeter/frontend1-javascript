@@ -1,11 +1,12 @@
 require("dotenv").config()
 const prompt = require("prompt-sync")()
-const path = (folder) => `${folder}/${process.env.GROUP_FOLDER_NAME || ''}`
+const envName = process.env.GROUP_FOLDER_NAME || ''
+const path = (folder) => `${folder}/${envName}`
 require(path("./objects"))._setupGroups()
 const student = require(path("./objects"))._getStudent
 const students = require(path("./objects"))._getStudents
 const group = require(path("./objects"))._getGroup
-const calculate = require(path("./objects"))._calculate
+const calculate = require(path("./functions"))._calculate
 
 const instructions = `
 
@@ -19,14 +20,13 @@ group [index]                |   Returns a group by name or index
 exit, q                      |   Quit program
 
 `
+const inField = `[${envName.toUpperCase()}] ƒ: `
 
 console.clear();
-console.log(`
-JavaScript-1__TODO: ƒ
-${instructions}
-`)
+console.log("JavaScript-1__TODO: ƒ")
+console.log(instructions)
 
-let input = prompt('ƒ: ')
+let input = prompt(inField)
 
 const execute = (input) => {
     let exit = false
@@ -43,9 +43,11 @@ const execute = (input) => {
             break
         case 'square':
         case 'calculate':
-            calculate(command[1], command[2])
+        case 'calc':
+            console.log(calculate(command[1], command[2]))
+            break
         case 'exit':
-        case 'q': console.log("Bye!")
+        case 'q': console.log("»»» E X I T »»»")
             input = null
             exit = true
             break
@@ -55,7 +57,7 @@ const execute = (input) => {
             break
 	}
     if(!exit) {
-        input = prompt('ƒ: ')
+        input = prompt(inField)
         execute(input)
     }
 }
