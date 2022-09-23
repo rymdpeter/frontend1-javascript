@@ -2,27 +2,30 @@
 
 require("dotenv").config()
 const prompt = require("prompt-sync")()
-const path = (folder) => `${folder}/${process.env.GROUP_FOLDER_NAME || ''}`
-require(path("./objects"))._setupGroups()
-const student = require(path("./objects"))._getStudent
-const students = require(path("./objects"))._getStudents
-const group = require(path("./objects"))._getGroup
-const calculate = require(path("./objects"))._calculate
+const clc = require("cli-color")
+const example = require("./functions").index
+let folder = process.env.GROUP_FOLDER_NAME || ''
+let pathToObjects = folder ? `./objects/${folder}` : "./objects"
+const { setupGroups, student, students, group } = require(pathToObjects)
+
 
 console.clear();
 console.log(`
-Welcome to Frontend 1!
+nackademin-dot-js
+
 Available examples:
-Functions: square [x] [y]
+example: example [x] [operator] [y] ${clc.yellow("[EXAMPLE FUNCTION] this is an example function for debugging-purposes")}
 Students: students
 Student: student [index]
-Group: group [index]
+Group: group [index] ${clc.greenBright("[ATTENTION] This is the excercise. Go to objects/Readme.md instructions")}
 `)
 
-let input = prompt('ƒ: ')
-
+let promptMessage = `(${folder}) ${clc.greenBright(" ƒ: ")}`
+let input = prompt(promptMessage)
+setupGroups()
+let exit = false
 const execute = (input) => {
-    let exit = false
+    
 	let command = input.split(' ');
 	switch (command[0]) {
 		case 'students':
@@ -34,25 +37,25 @@ const execute = (input) => {
         case 'group':   
             console.debug(group(command[1]))
             break
+        case 'example':
         case 'square':
         case 'calculate':
-            calculate(command[1], command[2])
+            console.log(example(command[1], command[2]))
+            break
         case 'exit':
         case 'q': console.log("Exiting front end")
-            input = null
-            exit = true
+            process.exit()
             break
 		default:
-			console.log("Unknown function, type")
+			console.log("Unknown function.")
             break
 	}
-    if(!exit) {
-        input = prompt('ƒ: ')
-        execute(input)
-    }
+    if(exit) execute("exit")
+
+    input = prompt(promptMessage)
+    execute(input)
+    
 }
 
 execute(input)
 
-
-// console.debug(process.env)

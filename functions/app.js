@@ -1,5 +1,4 @@
-// Functions can also be held as the value of a variable
-// They are called anonymous functions
+// TODO add new function as an operator so that the user can type "calculate 2 + 4" from the frontend and get the correct answer
 const square = function(x,y) {
     return calculateSquare(x,y)
     // return x * y
