@@ -21,4 +21,4 @@ $ npm start
 ```
 When a prompt appears, type `students` and hit enter to see that the example data is loaded. The easiest way to replace it is to add more rows in the same format.
 
-When a prompt appears, type `group x` and hit enter to see the
+UPDATE: This whole assignment should be solved using *only* files in the folder `/objects/group-x/`
