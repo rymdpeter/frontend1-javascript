@@ -1,5 +1,9 @@
 .env
-
-data/*
+.vscode*
 
 node_modules
+
+data/dev/*
+
+
+
