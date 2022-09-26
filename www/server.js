@@ -17,7 +17,12 @@ app.use(express.static(path.join(__dirname, "public")))
 
 app.get('/api', (req, res) => {
   res.json({
-    "hello": "world"
+    "name": "nackademin-dot-js api version 1.0.0",
+    "endpoints": {
+      "/api/get": "returns a list of all students (students.all)",
+      "/get/:index": "returns the student at index (students.all[index])",
+      "group/:name": "returns the group with selector 'name' (getGroup(name)",
+    }
   })
 })
 
@@ -27,8 +32,8 @@ app.get('/api/get', (req, res) => {
 app.get('/api/get/:index', (req, res) => {
   res.json(student(req.params.index))
 })
-app.get('/api/group/:index', (req, res) => {
-  res.json(group(req.params.index))
+app.get('/api/group/:name', (req, res) => {
+  res.json(group(req.params.name))
 })
 
 

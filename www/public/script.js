@@ -1,5 +1,8 @@
 console.log("Hello World from console");
-// document.writeln("Hello world");
+// document.writeln("This is appended to the nodes in document.body") // this is the basic way to write to the document. 
+// console.log(document.getElementById("DocumentTitle").innerText);
+
+// const init = function() {
 
 // console.log("Fetching all students");
 
@@ -7,11 +10,14 @@ console.log("Hello World from console");
 //   .then((response) => response.json())
 //   .then((data) => console.log(data));
 
-// let group = "example-grop";
-
+// let group = "example-group";
 // console.log("Fetching group " + group);
 
 // fetch('http://localhost:3000/api/group/' + group)
 //   .then((response) => response.json())
-//   .then((data) => console.log(data));
-
+//   .then((data) => {
+//     let currentTitle = document.getElementById("DocumentTitle").innerText;
+//     document.getElementById("DocumentTitle").innerText = group + " | " + currentTitle;
+//     console.log(data);
+//   } );
+// }
