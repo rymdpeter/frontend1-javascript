@@ -1,4 +1,4 @@
-const square = require("./app.js").square // anonymous function imported from a module
+const square = require("./app.js").square 
 
 let x,y // multiple variable declarations separated by comma
 

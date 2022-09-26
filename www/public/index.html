@@ -2,12 +2,15 @@
 <html>
     <head>
         <title>Frontend 1: Javascript</title>
+        <!-- Scripts included in head are executed before document is displayed -->
         <script src="script.js"></script>
-        <script>
-
-        </script>
+        
     </head>
     <body>
-        <h1>Frontend 1: Javascript</h1>
+        <h1 id="DocumentTitle">Frontend 1: Javascript</h1>
+        <script>
+            // Scripts included at the end of the document has the complete document available in the DOM
+            console.log(document.getElementById("DocumentTitle").innerText)
+        </script>
     </body>
 </html>
