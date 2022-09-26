@@ -7,7 +7,10 @@ let ambitionDefined,
 
 
 function assignGroup(index, size) {
-    let group = Math.floor((index + 1) / size) + 1
+    allStudents.sort((a, b) => (a.hoursPerWeek > b.hoursPerWeek ? 1 : -1));//Sorterar arrayen efter antal timmar arbetade
+    allStudents.sort((a, b) => (a.hasJob > b.hasJob ? 1 : -1));//Sorterar arrayen efter om de har jobb eller inte
+
+    let group = Number(Math.floor((index + 1) / size) + 1)
     students.all[index].group = group
     index++
 
@@ -21,7 +24,12 @@ function applyAmbition(index) {
     // TODO: should scheduled time in the classroom be accounted for?
     students.all[index].hoursPerWeek = Math.floor(Math.random() * 24)
     // Some examples of attributes for inspiration. Booleans can be used on their own or grouped in an anonymous object
-    students.all[index].hasJob = true
+    //students.all[index].hasJob = true
+    let job = Math.random();
+        if (job <= 0.5)
+            students.all[index].hasJob = true
+        else
+            students.all[index].hasJob = false
     //  students.all[index].personalityType = {
     //      red: false, blue: false, green: true, yellow: false
     //   }
@@ -44,19 +52,18 @@ const getStudents = () =>{
     return students.all
 }
 
-const setupGroups = () => {
+const setupGroups = (size) => {
     
     ambitionDefined = applyAmbition(0)
-    groupsAssigned = assignGroup(0, 6) // TODO: maybe this need more thought?
+    groupsAssigned = assignGroup(0,size) // TODO: maybe this need more thought?
 
     return students.all   
 }
 // TODO: return an array with only the students that belongs to a group with a specific index
 const getGroup = (arg) => {
-    return({
-        TODO: "return group " + arg
-        // students: students.all.splice(11,6) // TODO: this works as long as the array of students is sorted by group. Also the size 
-    })
+    return  students.all.filter((student)=>student.group==arg);
+   
+
 }
 
 exports.students = getStudents

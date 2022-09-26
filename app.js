@@ -25,7 +25,7 @@ console.log(help)
 
 let promptMessage = `(${folder}) ${clc.greenBright(" ƒ: ")}`
 let input = prompt(promptMessage)
-setupGroups()
+setupGroups(6)
 let exit = false
 const execute = (input) => {
     
@@ -41,6 +41,10 @@ const execute = (input) => {
             case 'group':   
                 console.debug(group(command[1]))
                 break
+
+                case 'setup':
+                    console.debug(setupGroups(command[1]))
+                    break
             case 'example':
             case 'square':
             case 'calculate':
