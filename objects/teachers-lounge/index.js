@@ -1,7 +1,9 @@
-
+const teachers = require("./teachers")
 const students = require("./groups")
 
-const allStudents = students.all // read students from imported module
+const getTeachers = () => {
+    return teachers.all
+} // read students from imported module
 let ambitionDefined,
     groupsAssigned
 
@@ -53,13 +55,14 @@ const setupGroups = () => {
 }
 // TODO: return an array with only the students that belongs to a group with a specific index
 const getGroup = (arg) => {
-    return({
+    return([{
         TODO: "return group " + arg
         // students: students.all.splice(11,6) // TODO: this works as long as the array of students is sorted by group. Also the size 
-    })
+    }])
 }
 
 exports.students = getStudents
 exports.student = getStudent
 exports.setupGroups = setupGroups
 exports.group = getGroup
+exports.teachers = getTeachers

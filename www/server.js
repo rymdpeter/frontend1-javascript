@@ -2,7 +2,7 @@ require("dotenv").config()
 const open = require("open")
 const express = require("express")
 const path = require("path")
-const { setupGroups, student, students, group } = require("../objects")
+const { setupGroups, student, students, group, teachers } = require("../objects")
 
 const app = express(),
     port = process.env.EXPRESS_PORT || 3000,
@@ -19,24 +19,28 @@ app.get('/api', (req, res) => {
   res.json({
     "name": "nackademin-dot-js api version 1.0.0",
     "endpoints": {
-      "/api/get": "returns a list of all students (students.all)",
-      "/get/:index": "returns the student at index (students.all[index])",
-      "group/:name": "returns the group with selector 'name' (getGroup(name)",
+      "/api/get": "returns a list of all objects (students.all and teachers.all)",
+      "/api/get/teachers": "returns a list of all teachers (teachers.all)",
+      "/get/:index": "returns the person at index)",
+      "/get/:key/:content":"returns the student that has values in attributes :key that matches value :content",
+      "/group/:name": "returns the group with selector 'name' (getGroup(name)",
     }
   })
 })
 
 app.get('/api/get', (req, res) => {
-  res.json(students())
+  res.json([...students(),...teachers()])
 })
-app.get('/api/get/:index', (req, res) => {
-  res.json(student(req.params.index))
+app.get('/api/get/teachers', (req, res) => {
+  res.json(teachers())
+})
+app.get('/api/get/:key/:content', (req, res) => {  
+  let all = [...students(),...teachers()]
+  res.json(all.filter(e => e[req.params.key] == req.params.content))
 })
 app.get('/api/group/:name', (req, res) => {
   res.json(group(req.params.name))
 })
-
-
 
 app.listen(port, () => {
   setupGroups()

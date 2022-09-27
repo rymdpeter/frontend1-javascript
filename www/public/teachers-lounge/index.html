@@ -19,22 +19,36 @@
             <li><a href="/group-5/">Group 5</a></li>
             <li><a href="/group-6/">Group 6</a></li>
             <li><a href="/group-7/">Group 7</a></li>
+            <li><a href="/teachers-lounge/">Teacher's lounge</a></li>
         </ul>
     </nav>
-        <main>
-            <h1 id="DocumentTitle">Frontend 1: Javascript</h1>
-            <p id="MainDescription">
-                Välkommen till kursen "Frontent 1: Javascript" hos Nackademin.<br/>
-                Den här sidan är byggd med nackademin-dot-js<br/>
-            </p>
-        </main>
+    <main>
+        <h1 id="DocumentTitle">Frontend 1: Javascript</h1>
+        <section id="MainDescription">
+            <p>
+                Välkommen till kursen "Frontent 1: Javascript" hos Nackademin.
+                </p>
+                <h2>Alla lärare</h2>
+            <table>
+                <thead>
+                    <tr><th>Förnamn</th><th>Efternamn</th><th>Discord</th></tr>
+                </thead>
+                <tbody id="TableData">
+                </tbody>
+            </table>
+        </section>
+        
+        <p id="ProjectCredits">
+            Den här sidan är byggd på övnings-ramverket nackademin-dot-js.<br/>
+        </p>
+    </main>
         <script>
             // Scripts included at the end of the document has the complete document available in the DOM
             // console.log(document.getElementById("DocumentTitle").innerText);
             // document.writeln("This is appended to the nodes in document.body");
             // variables declared in script.js are available here, which lets us call functions when we
-            // reach the bottom of the document.
-            // init();
+            // reach the bottom of the document. 
+            init();
         </script>
     </body>
 </html>

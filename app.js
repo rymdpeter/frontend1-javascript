@@ -1,37 +1,43 @@
-
-
 require("dotenv").config()
-const prompt = require("prompt-sync")()
+const prompt = require("prompt-sync")({sigint: true})
 const clc = require("cli-color")
-const example = require("./functions").index
+
 let folder = process.env.GROUP_FOLDER_NAME || ''
 let pathToObjects = folder ? `./objects/${folder}` : "./objects"
-const { setupGroups, student, students, group } = require(pathToObjects)
+const { setupGroups, student, students, group, teachers } = require(pathToObjects)
+let pathToFunctions = folder ? `./functions/${folder}` : "./objects"
+const { example } = require(pathToFunctions)
 
 
 
 const help =`
-nackademin-dot-js
 Use ${clc.yellow("help")} if you need help and ${clc.yellow("quit")} if you want to quit
 
-Available examples:
+Available actions:
 example: example [x] [operator] [y] ${clc.yellow("[EXAMPLE FUNCTION] this is an example function for debugging-purposes")}
 Students: students
 Student: student [index]
 Group: group [index] ${clc.greenBright("[ATTENTION] This is the excercise. Go to objects/Readme.md for instructions")}
 `
 console.clear()
-console.log(help)
+console.log(clc.greenBright("nackademin-dot-js (v1.0.0)"))
 
 let promptMessage = `(${folder}) ${clc.greenBright(" ƒ: ")}`
-let input = prompt(promptMessage)
+
 setupGroups()
-let exit = false
-const execute = (input) => {
+let input = ""
+if(process.argv.splice(2).length > 0) {
+    input = process.argv.splice(2).join(" ")
+}
     
-	if(input) {
-        let command = input.split(' ') 
+const execute = (input) => {
+        let command = input.split(' ')
+        
+
         switch (command[0]) {
+            case 'list': 
+                console.debug([...students(), ...teachers()]) // merge the two arrays of student- and teacher-objects
+                break
             case 'students':
                 console.debug(students())
                 break
@@ -50,18 +56,18 @@ const execute = (input) => {
             case 'quit':
             case 'q': console.log("Exiting front end")
                 process.exit()
-                break
             case 'help':
             default:
                 console.log(help)
                 break
         }
-    } 
-	
-    if(exit) execute("exit")
+    
+        exit = false
+        input = prompt(promptMessage)
+        execute(input)
+    
 
-    input = prompt(promptMessage)
-    execute(input)
+    
     
 }
 

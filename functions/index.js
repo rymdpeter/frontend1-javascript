@@ -23,4 +23,4 @@ GetArgumentsFromProcess()
 const calculate = (x,y) => {
     return `${x} X ${y} equals ${square(x,y)}`
 }
-exports.index = calculate
+exports.example = calculate
