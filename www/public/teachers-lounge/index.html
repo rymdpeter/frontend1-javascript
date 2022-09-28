@@ -6,6 +6,34 @@
             Scripts included in head are executed before the document is displayed.
          -->
         <script src="script.js"></script>
+        <style>
+            /* Ignore this part. This comes in next class */
+            #Gists, #Pens {
+                max-width:800px;
+            }
+            #Gists .info, 
+            #Pens .info {
+                display: none;
+            }
+            #Gists .collapsed .info, 
+            #Pens .collapsed .info {
+                display: inline;
+            }
+            .collapsed h2, 
+            .collapsed h2 {
+                cursor: pointer;
+                color:blue;
+                text-decoration: underline;
+            }
+            section{
+                transition:all cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+            .collapsed {
+                height:75px;
+                overflow:hidden;
+            }
+            
+        </style>
         
     </head>
     <body>
@@ -28,13 +56,33 @@
             <p>
                 Välkommen till kursen "Frontent 1: Javascript" hos Nackademin.
                 </p>
-                <h2>Alla lärare</h2>
-            <table>
-                <thead>
-                    <tr><th>Förnamn</th><th>Efternamn</th><th>Discord</th></tr>
-                </thead>
-                <tbody id="TableData">
-                </tbody>
+                <p>
+                    Det här projektet är tänkt att ge alla studenter ett ramverk för att dela, testa, granska och lämna in kod. Glöm inte att ha kul ':p
+                </p>
+        </section>
+        
+        <section id="Gists" class="collapsed" onclick="this.classList.remove('collapsed')" >
+            <h2>
+                Github "Gists", ett smart sätt att dela kod-idéer som inte behöver kunna köras <span class="info">(Klicka för att visa)</span>
+            </h2>
+            <script src="https://gist.github.com/rymdpeter/41d060f95bf994e3f1a40b1ad9de2a54.js"></script>
+        </section>
+        <section id="Pens" class="collapsed" onclick="this.classList.remove('collapsed')">
+            <h2>codepen.io är ett annat smidigt verktyg om man vill testa kod utan att starta ett helt projekt. </h2>
+            <p><a href="https://codepen.io/collection/VYkWQx">
+                
+            </a></p>
+            <p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="MWGrREE" data-editable="true" data-user="rymdpeter-the-looper" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/rymdpeter-the-looper/pen/MWGrREE">
+                Untitled</a> by rymdpeter (<a href="https://codepen.io/rymdpeter-the-looper">@rymdpeter-the-looper</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </section>
+        
+        <p id="ProjectCredits">
+            Den här sidan är byggd med f_stack-dot-js.<br/>
+        </p>
             </table>
         </section>
         

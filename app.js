@@ -1,15 +1,12 @@
 require("dotenv").config()
 const prompt = require("prompt-sync")({sigint: true})
 const clc = require("cli-color")
-
-let folder = process.env.GROUP_FOLDER_NAME || ''
-let pathToObjects = folder ? `./objects/${folder}` : "./objects"
-const { setupGroups, student, students, group, teachers } = require(pathToObjects)
-let pathToFunctions = folder ? `./functions/${folder}` : "./objects"
-const { example } = require(pathToFunctions)
+const {server} = require("./www/server")
+const { setupGroups, student, students, group, teachers } = require('./objects')
+const example = require('./functions')
 
 
-
+const envFolder = process.env.GROUP_FOLDER_NAME || ""
 const help =`
 Use ${clc.yellow("help")} if you need help and ${clc.yellow("quit")} if you want to quit
 
@@ -22,7 +19,7 @@ Group: group [index] ${clc.greenBright("[ATTENTION] This is the excercise. Go to
 console.clear()
 console.log(clc.greenBright("nackademin-dot-js (v1.0.0)"))
 
-let promptMessage = `(${folder}) ${clc.greenBright(" ƒ: ")}`
+let promptMessage = `(${envFolder}) ${clc.greenBright(" ƒ: ")}`
 
 setupGroups()
 let input = ""
@@ -30,7 +27,7 @@ if(process.argv.splice(2).length > 0) {
     input = process.argv.splice(2).join(" ")
 }
     
-const execute = (input) => {
+function execute(input) {
         let command = input.split(' ')
         
 
@@ -47,6 +44,9 @@ const execute = (input) => {
             case 'group':   
                 console.debug(group(command[1]))
                 break
+            case 'server':
+                server()
+                break
             case 'example':
             case 'square':
             case 'calculate':
@@ -62,7 +62,6 @@ const execute = (input) => {
                 break
         }
     
-        exit = false
         input = prompt(promptMessage)
         execute(input)
     

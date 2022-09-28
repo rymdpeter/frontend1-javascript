@@ -5,11 +5,11 @@ const path = require("path")
 const { setupGroups, student, students, group, teachers } = require("../objects")
 
 const app = express(),
-    port = process.env.EXPRESS_PORT || 3000,
-    logger = function(req, res, next) {
-        console.log("serving " + req.path)
-        next()
-    }
+port = process.env.EXPRESS_PORT || 3000,
+logger = function(req, res, next) {
+    console.log("serving " + req.path)
+    next()
+}
 
 app.use(logger)
 
@@ -41,9 +41,10 @@ app.get('/api/get/:key/:content', (req, res) => {
 app.get('/api/group/:name', (req, res) => {
   res.json(group(req.params.name))
 })
-
-app.listen(port, () => {
+const server = () => app.listen(port, () => {
   setupGroups()
   console.log(`Frontend app running on http://localhost:${port}`)
   open(`http://localhost:${port}`)
 })
+
+exports.server = server()
