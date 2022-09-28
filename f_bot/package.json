@@ -1,0 +1,21 @@
+{
+  "name": "f_bot",
+  "version": "1.0.0",
+  "description": "First line support powered by NLP and NLU",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rymdfabriken",
+  "license": "ISC",
+  "dependencies": {
+    "@nlpjs/basic": "^4.23.5",
+    "@nlpjs/lang-sv": "^4.23.4",
+    "cli-color": "^2.0.3",
+    "node-nlp": "^4.24.0",
+    "webpack": "^5.74.0"
+  },
+  "devDependencies": {
+    "pino": "^8.6.0"
+  }
+}

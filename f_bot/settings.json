@@ -1,0 +1,10 @@
+{
+    "settings": {
+      "nlp": {
+        "corpora": [
+          "./corpus.f_bot.json"
+        ]
+      }
+    },
+    "use": ["Basic", "ConsoleConnector", "LangSv"]
+  }

@@ -1,5 +1,5 @@
 // TODO: convert function to have single point of return
-// TODO: 
+
 function calc(x,y,operator) {
     let calculation
     x = Number(x)

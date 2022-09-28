@@ -36,7 +36,7 @@ function execute(input) {
                 console.debug([...students(), ...teachers()]) // merge the two arrays of student- and teacher-objects
                 break
             case 'students':
-                console.debug(students())
+               console.debug(students())
                 break
             case 'student':
                 console.debug(student(command[1]))
@@ -54,7 +54,8 @@ function execute(input) {
                 break
             case 'exit':
             case 'quit':
-            case 'q': console.log("Exiting front end")
+            case 'q': 
+                console.log("Exiting front end")
                 process.exit()
             case 'help':
             default:

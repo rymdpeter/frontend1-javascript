@@ -1,0 +1,17 @@
+{
+    "name": "Corpus",
+    "locale": "sv-SE",
+    "data": [
+      {
+        "intent": "agent.whereami",
+        "utterances": [
+          "where am i",
+          "where am i talking"
+        ],
+        "answers": [
+          "",
+          ""
+        ]
+      }
+    ]
+}
