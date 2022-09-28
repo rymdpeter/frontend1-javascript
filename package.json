@@ -24,5 +24,9 @@
     "express": "^4.18.1",
     "open": "^8.4.0",
     "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "uuid": "^9.0.0",
+    "zodiac-signs": "^1.1.0"
   }
 }

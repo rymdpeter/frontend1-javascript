@@ -5,7 +5,7 @@ const clc = require('cli-color')
 
 async function init(context) {
 	const nlp = new NlpManager({ use: [ 'Basic', 'ConsoleConnector' ] })
-  const botPrompt = `${clc.redBright("(ƒ_bot) => : ")}`
+  const botPrompt = `${clc.redBright("# (ƒ_bot) => 𝄢 ")}`
 
   nlp.addCorpus('./corpus.json')
 
@@ -14,19 +14,21 @@ async function init(context) {
     output: process.stout,
     terminal: false
   })
-  function say(msg) {
-    output.line(msg)
+  function say(msg, rl) {
+    rl.output.write(msg)
   }
 
 say("ƒ_bot.status = " + clc.greenBright('active'))
 	await nlp.train()
   rl.on('line', async line => {
+    const result = await nlpManager.process(line);
     
   })
 
 
-	const response = await nlp.process('sv', 'Hej, Användare! Vad kan jag hjälpa dig med?')
+	const response = await nlp.process('sv', 'Hej, Användare! Vad kan jag göra för dig?')
 	console.log(response);
 }
 
 init();
+exports._f = init()

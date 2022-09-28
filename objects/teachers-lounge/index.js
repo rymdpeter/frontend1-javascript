@@ -23,7 +23,7 @@ function applyAmbition(index) {
     // TODO: should scheduled time in the classroom be accounted for?
     students.all[index].hoursPerWeek = Math.floor(Math.random() * 24)
     // Some examples of attributes for inspiration. Booleans can be used on their own or grouped in an anonymous object
-    students.all[index].hasJob = true
+    // students.all[index].hasJob = true
     //  students.all[index].personalityType = {
     //      red: false, blue: false, green: true, yellow: false
     //   }
