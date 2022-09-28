@@ -36,5 +36,6 @@ Anyone who tries to push css-rules will have their ability to follow written ins
 3. Something fun. No one can make a living writing code if they don't enjoy it. 
 4. Code that you don't understand or can't make work. Personal problems are fine if your code is not causing any problems at the moment. Take your time, and present both the problem as well as the reason it's worth solving. Each group will have at least 30 minutes of the class' time. Everyone doesn't have to present a problem, but each group should be able to present an interesting case.
 
+## Grading Criteria
+For a passing grade, each groups accounts for all of their members to have an up and running dev environment by the end of the day.
 
-## How to start the local development server
