@@ -1,7 +1,7 @@
 {
   "name": "f_bot",
   "version": "1.0.0",
-  "description": "First line support powered by NLP and NLU",
+  "description": "First line support powered by NLP and NLU ",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

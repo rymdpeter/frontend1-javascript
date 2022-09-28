@@ -2,7 +2,7 @@
 
 Det här är repot för Frontend 1: Javascript. 
 
-## För att installera och köra exemplet 01-variabler
+## För att installera och köra appen
 
 ```
 $ npm install

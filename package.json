@@ -1,12 +1,12 @@
 {
   "name": "f_stack-dot-js",
   "version": "1.1.0",
-  "description": "Exempelprojekt för kursen Frontend 1: Javascript, Nackademin Höstterminen 2022",
+  "description": "𝄢_stack-dot-js is an educational project framework meant to provide a full technical for learning purposes.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "pm2 start www/server.js && node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node www/server.js"
+    "server": "pm2 stop all && node www/server.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,8 @@
     "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
+    "pm2": "^5.2.0",
+    "sha256": "^0.2.0",
     "uuid": "^9.0.0",
     "zodiac-signs": "^1.1.0"
   }
