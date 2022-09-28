@@ -16,9 +16,7 @@ const help = `
 Use ${clc.yellow('help')} if you need help and ${clc.yellow('quit')} if you want to quit.
 
 Available actions:
-example: example [x] [operator] [y] ${clc.yellow(
-	'[EXAMPLE FUNCTION]'
-)}
+example: example [x] [operator] [y] ${clc.yellow('[EXAMPLE FUNCTION]')}
 Students: students
 Student: student [index]
 Group: group [index])}
@@ -68,6 +66,8 @@ if (!fs.existsSync('./secrets.json')) {
 function execute(input) {
 	let command = input.split(' ');
 	switch (command[0]) {
+        case 'consent':
+
 		case 'list':
 			console.debug([ ...students(), ...teachers() ]); // merge the two arrays of student- and teacher-objects
 			break;
