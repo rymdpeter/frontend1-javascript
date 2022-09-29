@@ -1,6 +1,6 @@
 require('dotenv').config();
 const zodiac = require('zodiac-signs')('sv-SE')
-const f_bot = require("./f_bot")
+const f_bot = require("./f_bot").init
 const prompt = require('prompt-sync')({ sigint: true });
 const clc = require('cli-color');
 const readline = require('readline');
@@ -12,6 +12,9 @@ const uuidv4 = require('uuid').v4
 const pm2 = require('pm2')
 
 const envFolder = process.env.GROUP_FOLDER_NAME || '';
+const splash = `
+𝄢_𝓈𝓉𝒶𝒸𝓀.-𝒿𝓈 
+`
 const help = `
 Use ${clc.yellow('help')} if you need help and ${clc.yellow('quit')} if you want to quit.
 
@@ -22,15 +25,29 @@ Student: student [index]
 Group: group [index])}
 `;
 console.clear();
-console.log(clc.greenBright('nackademin-dot-js (v1.0.0)'));
+console.log(clc.greenBright(splash));
 
 let promptMessage = `${clc.cyan('(' + envFolder + ')')} ${clc.greenBright(' 𝄢. ')}`;
 
 setupGroups();
 const rl = readline.createInterface({
 	input: process.stdin,
-	output: process.stdout
-});
+	output: process.stdout,
+    prompt: promptMessage
+})
+rl.on("line", (line) => {
+    execute(line)
+})
+rl.on('keypress', async (s,k) => {
+    setTimeout(function() {
+        rl._refreshLine(); // force refresh colors
+       
+    }, 0);
+    
+    
+})
+
+
 
 if (!fs.existsSync('./secrets.json')) {
 	let personalInfo = {};
@@ -64,10 +81,19 @@ if (!fs.existsSync('./secrets.json')) {
 }
 
 function execute(input) {
+    console.log(input)
 	let command = input.split(' ');
 	switch (command[0]) {
-        case 'consent':
-
+        case "#": 
+            rl.setPrompt(clc.redBright('#(ƒ_bot) => 𝄢_'))
+            f_bot()
+            break
+        case 'www':
+            open(`http://localhost:${process.env.EXPRESS_PORT || 3000}`)
+            break
+        case 'api':
+            open(`http://localhost:${process.env.EXPRESS_PORT || 3000}/api`)
+            break
 		case 'list':
 			console.debug([ ...students(), ...teachers() ]); // merge the two arrays of student- and teacher-objects
 			break;
@@ -94,6 +120,6 @@ function execute(input) {
 			console.log(help);
 			break;
 	}
-	execute(prompt(promptMessage));
+	rl.prompt()
 }
-execute('help');
+rl.prompt()

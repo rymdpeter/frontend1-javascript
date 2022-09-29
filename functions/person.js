@@ -1,3 +1,8 @@
-const sha256 = require("sha256")
+const sha256 = require('sha256')
+const fs = require('fs')
 
-console.log(sha256("string or binary"))
+function consentToDataUsage() {
+
+} 
+
+exports.include = include

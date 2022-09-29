@@ -1,13 +1,12 @@
-const teachers = require("./teachers")
-const students = require("./groups")
+const students = {}
+const teachers = {}
 
-const getTeachers = () => {
-    return teachers.all
-} // read students from imported module
-let ambitionDefined,
-    groupsAssigned
-
-
+function init (context) {
+    students.all = context.data.students
+    teachers.all = context.data.teachers
+    assignGroup(0,6)
+    applyAmbition()
+}
 function assignGroup(index, size) {
     let group = Math.floor((index + 1) / size) + 1
     students.all[index].group = group
@@ -18,51 +17,49 @@ function assignGroup(index, size) {
     } 
     assignGroup(index, size)
 }
-// TODO: Time isn't everything. Or is it?
-function applyAmbition(index) {
-    // TODO: should scheduled time in the classroom be accounted for?
-    students.all[index].hoursPerWeek = Math.floor(Math.random() * 24)
-    // Some examples of attributes for inspiration. Booleans can be used on their own or grouped in an anonymous object
-    students.all[index].hasJob = true
-    //  students.all[index].personalityType = {
-    //      red: false, blue: false, green: true, yellow: false
-    //   }
-    // ... 
-    index++
 
-    if (index >= students.all.length) {
-        return true // remember that it's good practice to have single point of return for a function
+function applyAmbition() {
+    students.all.forEach(student => student.hoursPerWeek = Math.floor(Math.random() * 24))
+}
+
+function apply (callback, selection, action) {
+
+    if (selection.length > 0) {
+        result = action(selection)
+    } else {
+        result = "Selection is empty, nothing to do."
     }
-    applyAmbition(index)
+    return callback ?
+        callback(result)
+        : result
 }
 
-const getStudent = (index) => {
-    let i = Number(index) 
-    if (isNaN(i) || students.all.length > i) i = 0 // TODO: fix this. What happens when we don't get good input?
-    else i = index
-    return students.all[i]
-}
-const getStudents = () =>{
-    return students.all
+function get(callback) {
+    let everyone = [...students.all, ...teachers.all]
+    everyone.forEach(person => person.hasJob = true)
+    return callback ?
+        callback(everyone)
+        : everyone
 }
 
-const setupGroups = () => {
+function query(callback, content, key) {
+    let everyone = [...students.all, ...teachers.all] // merges the two arrays
+    let index = parseInt(query)
+    let result = []
     
-    ambitionDefined = applyAmbition(0)
-    groupsAssigned = assignGroup(0, 6) // TODO: maybe this need more thought?
-
-    return students.all   
+    if(!isNaN(index)) {
+        result.push(everyone[index]) // If the query is just an integer, we return the person at that index
+    } else {
+        key = key || 'email'
+        result = everyone.filter(person => person[key] && person[key] == content) // group-numbers are stored as integers, so we use == to make comparison easier
+    }
+    
+    return callback ? 
+        callback(result)
+        : result
 }
-// TODO: return an array with only the students that belongs to a group with a specific index
-const getGroup = (arg) => {
-    return([{
-        TODO: "return group " + arg
-        // students: students.all.splice(11,6) // TODO: this works as long as the array of students is sorted by group. Also the size 
-    }])
-}
 
-exports.students = getStudents
-exports.student = getStudent
-exports.setupGroups = setupGroups
-exports.group = getGroup
-exports.teachers = getTeachers
+exports.init = init
+exports.list = get
+exports.query = query
+exports.apply = apply

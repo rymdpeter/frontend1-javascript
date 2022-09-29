@@ -3,10 +3,10 @@
     "locale": "sv-SE",
     "data": [
       {
-        "intent": "agent.whereami",
+        "intent": "greeting",
         "utterances": [
-          "where am i",
-          "where am i talking"
+          "Hej",
+          ""
         ],
         "answers": [
           "",

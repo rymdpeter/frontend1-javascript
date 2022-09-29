@@ -44,7 +44,7 @@ app.get('/api/group/:name', (req, res) => {
 const server = () => app.listen(port, () => {
   setupGroups()
   console.log(`Frontend app running on http://localhost:${port}`)
-  open(`http://localhost:${port}`)
+  // open(`http://localhost:${port}`)
 })
 
 exports.server = server()
