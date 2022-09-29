@@ -1,6 +1,6 @@
 require('dotenv').config();
 const zodiac = require('zodiac-signs')('sv-SE')
-const f_bot = require("./f_bot").init
+// const f_bot = require("./f_bot").init
 const prompt = require('prompt-sync')({ sigint: true });
 const clc = require('cli-color');
 const readline = require('readline');
@@ -23,7 +23,7 @@ example: example [x] [operator] [y] ${clc.yellow('[EXAMPLE FUNCTION]')}
 Students: students
 Student: student [index]
 Group: group [index])}
-`;
+`
 console.clear();
 console.log(clc.greenBright(splash));
 
@@ -42,17 +42,13 @@ rl.on('keypress', async (s,k) => {
     setTimeout(function() {
         rl._refreshLine(); // force refresh colors
        
-    }, 0);
-    
-    
+    }, 0)
 })
-
-
 
 if (!fs.existsSync('./secrets.json')) {
 	let personalInfo = {};
 	console.log(clc.redBright('BERÄTTA OM DIG SJÄLV'));
-	console.log('Förnamn');
+	console.log('Förnamn'); 
 	personalInfo.firstname = prompt(promptMessage);
 	console.log('Efternamn');
 	personalInfo.lastname = prompt(promptMessage);
@@ -84,10 +80,6 @@ function execute(input) {
     console.log(input)
 	let command = input.split(' ');
 	switch (command[0]) {
-        case "#": 
-            rl.setPrompt(clc.redBright('#(ƒ_bot) => 𝄢_'))
-            f_bot()
-            break
         case 'www':
             open(`http://localhost:${process.env.EXPRESS_PORT || 3000}`)
             break

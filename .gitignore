@@ -6,5 +6,5 @@ node_modules
 data/dev/*
 !data/dev/.*
 
-secret.json
+secrets.json
 
