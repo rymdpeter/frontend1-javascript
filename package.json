@@ -6,9 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "square": "node functions/group-3/", 
     "square": "node functions/group-5/",
-    "groups": "node objects/", 
+    "groups": "node objects/",
     "server": "node www/server.js"
   },
   "repository": {
@@ -26,5 +25,11 @@
     "express": "^4.18.1",
     "open": "^8.4.0",
     "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "eslint": "^8.24.0",
+    "eslint-config-canonical": "^37.0.3"
   }
 }
