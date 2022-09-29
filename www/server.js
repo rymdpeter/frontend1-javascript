@@ -5,11 +5,11 @@ const path = require("path")
 const { setupGroups, student, students, group, teachers } = require("../objects")
 
 const app = express(),
-port = process.env.EXPRESS_PORT || 3000,
-logger = function(req, res, next) {
+  port = process.env.EXPRESS_PORT || 3000,
+  logger = function (req, res, next) {
     console.log("serving " + req.path)
     next()
-}
+  }
 
 app.use(logger)
 
@@ -22,20 +22,20 @@ app.get('/api', (req, res) => {
       "/api/get": "returns a list of all objects (students.all and teachers.all)",
       "/api/get/teachers": "returns a list of all teachers (teachers.all)",
       "/get/:index": "returns the person at index)",
-      "/get/:key/:content":"returns the student that has values in attributes :key that matches value :content",
+      "/get/:key/:content": "returns the student that has values in attributes :key that matches value :content",
       "/group/:name": "returns the group with selector 'name' (getGroup(name)",
     }
   })
 })
 
 app.get('/api/get', (req, res) => {
-  res.json([...students(),...teachers()])
+  res.json([...students(), ...teachers()])
 })
 app.get('/api/get/teachers', (req, res) => {
   res.json(teachers())
 })
-app.get('/api/get/:key/:content', (req, res) => {  
-  let all = [...students(),...teachers()]
+app.get('/api/get/:key/:content', (req, res) => {
+  let all = [...students(), ...teachers()]
   res.json(all.filter(e => e[req.params.key] == req.params.content))
 })
 app.get('/api/group/:name', (req, res) => {

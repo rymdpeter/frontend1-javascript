@@ -33,22 +33,22 @@ setupGroups();
 const rl = readline.createInterface({
 	input: process.stdin,
 	output: process.stdout,
-    prompt: promptMessage
+	prompt: promptMessage
 })
 rl.on("line", (line) => {
-    execute(line)
+	execute(line)
 })
-rl.on('keypress', async (s,k) => {
-    setTimeout(function() {
-        rl._refreshLine(); // force refresh colors
-       
-    }, 0)
+rl.on('keypress', async (s, k) => {
+	setTimeout(function () {
+		rl._refreshLine(); // force refresh colors
+
+	}, 0)
 })
 
 if (!fs.existsSync('./secrets.json')) {
 	let personalInfo = {};
 	console.log(clc.redBright('BERÄTTA OM DIG SJÄLV'));
-	console.log('Förnamn'); 
+	console.log('Förnamn');
 	personalInfo.firstname = prompt(promptMessage);
 	console.log('Efternamn');
 	personalInfo.lastname = prompt(promptMessage);
@@ -77,17 +77,17 @@ if (!fs.existsSync('./secrets.json')) {
 }
 
 function execute(input) {
-    console.log(input)
+	console.log(input)
 	let command = input.split(' ');
 	switch (command[0]) {
-        case 'www':
-            open(`http://localhost:${process.env.EXPRESS_PORT || 3000}`)
-            break
-        case 'api':
-            open(`http://localhost:${process.env.EXPRESS_PORT || 3000}/api`)
-            break
+		case 'www':
+			open(`http://localhost:${process.env.EXPRESS_PORT || 3000}`)
+			break
+		case 'api':
+			open(`http://localhost:${process.env.EXPRESS_PORT || 3000}/api`)
+			break
 		case 'list':
-			console.debug([ ...students(), ...teachers() ]); // merge the two arrays of student- and teacher-objects
+			console.debug([...students(), ...teachers()]); // merge the two arrays of student- and teacher-objects
 			break;
 		case 'students':
 			console.debug(students());
@@ -105,7 +105,7 @@ function execute(input) {
 		case 'quit':
 		case 'q':
 			console.log('Exiting front end');
-            pm2.stop('all')
+			pm2.stop('all')
 			process.exit()
 		case 'help':
 		default:
