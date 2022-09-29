@@ -34,7 +34,7 @@ Anyone who tries to push css-rules will have their ability to follow written ins
 1. A page structure for personal presentations. An empty html-page that can work as a template is enough. 
 2. What kind of data that would be useful for you to know about your fellow students. Use the json-file in your data/dev folder and present new information, or removal of anything you find inapproproiate.
 3. Something fun. No one can make a living writing code if they don't enjoy it. 
-4. Code that you don't understand or can't make work. Personal problems are fine if your code is not causing any problems at the moment. Take your time, and present both the problem as well as the reason it's worth solving. Each group will have at least 30 minutes of the class' time. Everyone doesn't have to present a problem, but each group should be able to present an interesting case.
+4. Code that you don't understand or can't make work. Take your time, and present both the problem as well as the reason it's worth solving. Each group will have at least 30 minutes of the class' time. Everyone doesn't have to present a problem, but each group should be able to present an interesting case. If your group is stuck on point 3, a good problem qualifies as fun.
 
 ## Grading Criteria
 For a passing grade, each groups accounts for all of their members to have an up and running dev environment by the end of the day.
