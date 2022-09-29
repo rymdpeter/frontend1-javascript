@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Frontend 1: Javascript</title>
-        <!-- 
+  <head>
+    <title>Frontend 1: Javascript</title>
+    <!-- 
             Scripts included in head are executed before the document is displayed.
          -->
-        <script src="/script.js"></script>
-        <!-- 
+    <script src="script.js"></script>
+    <!-- 
             <script src="/group-1/script.js"></script>
             <script src="/group-2/script.js"></script>
             <script src="/group-3/script.js"></script>
@@ -16,52 +16,51 @@
             <script src="/group-7/script.js"></script> 
             <script src="/teachers-lounge/script.js"></script> 
         -->
-        
-    </head>
-    
-    <body>
-        <nav>
-            <ul>
-                <li><a href="/">Start</a></li>
-                <li><a href="/group-1/">Group 1</a></li>
-                <li><a href="/group-2/">Group 2</a></li>
-                <li><a href="/group-3/">Group 3</a></li>
-                <li><a href="/group-4/">Group 4</a></li>
-                <li><a href="/group-5/">Group 5</a></li>
-                <li><a href="/group-6/">Group 6</a></li>
-                <li><a href="/group-7/">Group 7</a></li>
-                <li><a href="/teachers-lounge/">Teacher's lounge</a></li>
-            </ul>
-        </nav>
-        <main>
-            <h1 id="DocumentTitle">Frontend 1: Javascript</h1>
-            <section id="MainDescription">
-                <p>
-                    Välkommen till kursen "Frontent 1: Javascript" hos Nackademin. Hoppas alla har kul.
-                    </p>
-                    <p>
-                        Det här projektet är tänkt att ge alla studenter ett ramverk för att dela, testa, granska och lämna in kod. Glöm inte att ha kul ':p
-                    </p>
-            </section>
-            
-            <section>
-            </section>
+  </head>
 
-            <section>
-            </section>
-            
-            <p id="ProjectCredits">
-                Den här sidan är byggd med fullstack-dot-js.<br/>
-            </p>
-        </main>
-        <script>
-            console.log(document.body)
-            // Scripts included at the end of the document has the complete document available in the DOM
-            console.log(document.getElementById("DocumentTitle").innerText);
-            //document.writeln("This is appended to the nodes in document.body");
-            // variables declared in script.js are available here, which lets us call functions when we
-            // reach the bottom of the document.
-            init();
-        </script>
-    </body>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Start</a></li>
+        <li><a href="/group-1/">Group 1</a></li>
+        <li><a href="/group-2/">Group 2</a></li>
+        <li><a href="/group-3/">Group 3</a></li>
+        <li><a href="/group-4/">Group 4</a></li>
+        <li><a href="/group-5/">Group 5</a></li>
+        <li><a href="/group-6/">Group 6</a></li>
+        <li><a href="/group-7/">Group 7</a></li>
+        <li><a href="/teachers-lounge/">Teacher's lounge</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1 id="DocumentTitle">Frontend 1: Javascript</h1>
+      <section id="MainDescription">
+        <p>
+          Välkommen till kursen "Frontent 1: Javascript" hos Nackademin. Hoppas
+          alla har kul.
+        </p>
+        <p>
+          Det här projektet är tänkt att ge alla studenter ett ramverk för att
+          dela, testa, granska och lämna in kod. Glöm inte att ha kul ':p
+        </p>
+      </section>
+
+      <section></section>
+
+      <section></section>
+
+      <p id="ProjectCredits">
+        Den här sidan är byggd med fullstack-dot-js.<br />
+      </p>
+    </main>
+    <script>
+      console.log(document.body);
+      // Scripts included at the end of the document has the complete document available in the DOM
+      console.log(document.getElementById("DocumentTitle").innerText);
+      //document.writeln("This is appended to the nodes in document.body");
+      // variables declared in script.js are available here, which lets us call functions when we
+      // reach the bottom of the document.
+      init();
+    </script>
+  </body>
 </html>
