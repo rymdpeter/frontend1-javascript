@@ -1,0 +1,1 @@
+console.log('Hello World from index.html i group-2');

@@ -1,4 +1,5 @@
-console.log('Hello World from console');
+//Det här scriptet hämtas av teacherslounge/index.js, i HEAD-taggen (körs när sidan laddas).
+console.log('Hello World from index.html i teacherslounge');
 // document.writeln("This is appended to the nodes in document.body") // this is the basic way to write to the document.
 // console.log(document.getElementById("DocumentTitle").innerText);
 // let input = prompt("Who are you?"); // prompt is available from the window-object, no need to import or install anything

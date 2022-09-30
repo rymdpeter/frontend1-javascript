@@ -45,7 +45,7 @@ rl.on('keypress', async (s,k) => {
     }, 0)
 })
 
-if (!fs.existsSync('./secrets.json')) {
+if (!fs.existsSync('./secrets.json')) { //Om secrets.json inte finns, fråga frågorna nedan 
 	let personalInfo = {};
 	console.log(clc.redBright('BERÄTTA OM DIG SJÄLV'));
 	console.log('Förnamn'); 
@@ -56,7 +56,7 @@ if (!fs.existsSync('./secrets.json')) {
 	personalInfo.discord = prompt(promptMessage);
 	console.log('Github användarnamn');
 	personalInfo.github = prompt(promptMessage);
-	open('https://www.utbildning.se/inspiration/kunskapstest/disc-test-14839');
+	open('https://www.utbildning.se/inspiration/kunskapstest/disc-test-14839');//Öppna länk till personlighetstest
 	console.log('Personlighetstyp (gul, grön, röd, blå)');
 	personalInfo.personalityType = prompt(promptMessage);
 	console.log('Födelsemånad (1-12)');
@@ -76,7 +76,7 @@ if (!fs.existsSync('./secrets.json')) {
 	fs.writeFileSync('secrets.json', JSON.stringify(personalInfo));
 }
 
-function execute(input) {
+function execute(input) { //En jävla meny hade ju varit bra här.
     console.log(input)
 	let command = input.split(' ');
 	switch (command[0]) {

@@ -1,3 +1,4 @@
+//Innehåller klasslista för export
 exports.all = 
 [
 { "firstname": "Mattias", "lastname": "Alm", "email": "Mattias.Alm@yh.nackademin.se" },

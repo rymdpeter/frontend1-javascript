@@ -1,18 +1,19 @@
- <!-- 
-            Den här sidan är startsidan som körs när websidan öppnas.
-         -->
-
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Frontend 1: Javascript</title>
+        <meta charset="utf-8">
+        <title>Frontend 1: Javascript /group-2</title>
+        <script>alert("hello! 1");</script>
         <!-- 
+            Bode det inte finnas massa metadata här?
+            Head specificerar 
             Scripts included in head are executed before the document is displayed.
          -->
-        <script src="/script.js"></script> 
+        <script src="/group-2/script.js"></script> <!--bytt adress för att visa script.js i grupp-2 mapp-->
         <!--script.js är en fil som ligger i samma mapp (www/public)som index.html, den innehåller små tramstexter som exempel,
             typ "jag är innehåll från kod" och Hello World i konsollen -->
         <!-- 
+            Nedan rader gör arr script.js i respektive gruppmapp läses in.
             <script src="/group-1/script.js"></script>
             <script src="/group-2/script.js"></script>
             <script src="/group-3/script.js"></script>
@@ -26,9 +27,9 @@
     </head>
     
     <body>
-        <nav>
+        <nav><!--Påtalar att listan nedan är en navigation i läshjälpmedel-->
             <ul>
-                <li><a href="/">Start</a></li>
+                <li><a href="/">Start</a></li><!--Hänvisar till index.html i root, övriga till index.html i resp mapp (som ej finns än)-->
                 <li><a href="/group-1/">Group 1</a></li>
                 <li><a href="/group-2/">Group 2</a></li>
                 <li><a href="/group-3/">Group 3</a></li>
@@ -40,20 +41,22 @@
             </ul>
         </nav>
         <main>
-            <h1 id="DocumentTitle">Frontend 1: Javascript</h1>
-            <section id="MainDescription">
+            <h1 id="DocumentTitle">Grupp 2</h1><!--Titel med h1-->
+            <section id="MainDescription"><!--Section med eget ID för att den ska kunna hittas?, innehåller 2 paragrafer-->
                 <p>
-                    Välkommen till kursen "Frontent 1: Javascript" hos Nackademin. Hoppas alla har tråkigt. Allt är alltid trasigt.
+                    Välkommen till grupp 2 i grupparbetet på kursen "Frontent 1: Javascript" hos Nackademin. 
+                    Det här är paragraf 1
                     </p>
                     <p>
-                        Det här projektet är tänkt att ge alla studenter ett ramverk för att dela, testa, granska och lämna in kod. Glöm inte att ha kul ':p
+                        Det här är paragraf 2
                     </p>
             </section>
             
-            <section>
+            <section><!--Här är en tom sektion av lite oklar anledning-->
             </section>
 
-            <section>
+            <section><!--Här är en tom sektion av lite oklar anledning-->
+                <button onclick="alert('Boom!');">DO NOT PRESS</button>
             </section>
             
             <p id="ProjectCredits">
@@ -61,9 +64,10 @@
             </p>
         </main>
         <script>
-            console.log(document.body)
+            alert("hello! 2");
+            console.log(document.body)//Den här raden skriver ut objektet doucuments body i consolen
             // Scripts included at the end of the document has the complete document available in the DOM
-            console.log(document.getElementById("DocumentTitle").innerText);
+            console.log(document.getElementById("DocumentTitle").innerText);//Hämtar elementet med ID DocumentTitle och skriver ut dess property? innerText i consollen
             //document.writeln("This is appended to the nodes in document.body");
             // variables declared in script.js are available here, which lets us call functions when we
             // reach the bottom of the document.

@@ -1,5 +1,7 @@
+//innehåller originalfunktionerna från uppg-2 med vissa tillägg
 const teachers = require("./teachers")
 const students = require("./groups")
+
 
 const getTeachers = () => {
     return teachers.all

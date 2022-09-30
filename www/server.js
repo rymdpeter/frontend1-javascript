@@ -1,8 +1,8 @@
-require("dotenv").config()
+require('dotenv').config();
 const open = require("open")
 const express = require("express")
 const path = require("path")
-const { setupGroups, student, students, group, teachers } = require("../objects")
+const { setupGroups, student, students, group, teachers } = require("../objects")//Hämtar in funktioner från /objects.js
 
 const app = express(),
 port = process.env.EXPRESS_PORT || 3000,
