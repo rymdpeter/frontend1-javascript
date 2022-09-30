@@ -9,3 +9,20 @@ fetch('../../../secrets.json')
     document.getElementById("zodiac").textContent = data.zodiac.name + " " + data.zodiac.symbol;
   })
   .catch((err) => console.log(err));
+
+
+// onödig knapp som visar ålder
+let onClick = () => {
+  let birthYear = document.getElementById("birthYear").textContent;
+  let age = new Date().getFullYear() - birthYear;
+
+  if (document.getElementById("age").textContent === "") {
+    document.getElementById("age").textContent = age;
+  } else {
+    document.getElementById("age").textContent = "";
+  }
+};
+
+
+
+
