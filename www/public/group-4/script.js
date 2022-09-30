@@ -7,4 +7,5 @@ fetch('../../../secrets.json')
     document.getElementById("personalityType").textContent = data.personalityType;
     document.getElementById("birthYear").textContent = data.birthYear;
     document.getElementById("zodiac").textContent = data.zodiac.name + " " + data.zodiac.symbol;
-  });
+  })
+  .catch((err) => console.log(err));
