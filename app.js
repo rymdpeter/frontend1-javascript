@@ -10,6 +10,7 @@ const example = require('./functions');
 const open = require('open');
 const uuidv4 = require('uuid').v4
 const pm2 = require('pm2')
+const pathjson = require('./www/public/group-4/data.json');
 
 const envFolder = process.env.GROUP_FOLDER_NAME || '';
 const splash = `
@@ -33,61 +34,63 @@ setupGroups();
 const rl = readline.createInterface({
 	input: process.stdin,
 	output: process.stdout,
-	prompt: promptMessage
+    prompt: promptMessage
 })
 rl.on("line", (line) => {
-	execute(line)
+    execute(line)
 })
-rl.on('keypress', async (s, k) => {
-	setTimeout(function () {
-		rl._refreshLine(); // force refresh colors
-
-	}, 0)
+rl.on('keypress', async (s,k) => {
+    setTimeout(function() {
+        rl._refreshLine(); // force refresh colors
+       
+    }, 0)
 })
 
-if (!fs.existsSync('./secrets.json')) {
-	let personalInfo = {};
-	console.log(clc.redBright('BERÄTTA OM DIG SJÄLV'));
-	console.log('Förnamn');
-	personalInfo.firstname = prompt(promptMessage);
-	console.log('Efternamn');
-	personalInfo.lastname = prompt(promptMessage);
-	console.log('Discord(namn#nr)');
-	personalInfo.discord = prompt(promptMessage);
-	console.log('Github användarnamn');
-	personalInfo.github = prompt(promptMessage);
-	open('https://www.utbildning.se/inspiration/kunskapstest/disc-test-14839');
-	console.log('Personlighetstyp (gul, grön, röd, blå)');
-	personalInfo.personalityType = prompt(promptMessage);
-	console.log('Födelsemånad (1-12)');
-	const date = {
-		month: 1,
-		day: 1
-	};
-	date.month = prompt(promptMessage);
-	console.log('Födelsedag (1-31) \n');
-	date.day = prompt(promptMessage);
-	console.log('Födelseår fyra siffror');
-	personalInfo.birthYear = prompt(promptMessage);
-	personalInfo.zodiac = zodiac.getSignByDate(date);
-	console.debug(personalInfo);
-	fs.writeFileSync('./data/dev/' + personalInfo.github + '.json', JSON.stringify(personalInfo));
-	personalInfo._SECRET_KEY = uuidv4();
-	fs.writeFileSync('secrets.json', JSON.stringify(personalInfo));
-}
+
+let personalInfo = {};
+console.log(clc.redBright('BERÄTTA OM DIG SJÄLV'));
+console.log('Förnamn'); 
+personalInfo.firstname = prompt(promptMessage);
+console.log('Efternamn');
+personalInfo.lastname = prompt(promptMessage);
+console.log('Discord(namn#nr)');
+personalInfo.discord = prompt(promptMessage);
+console.log('Github användarnamn');
+personalInfo.github = prompt(promptMessage);
+console.log('Favorit mat');
+personalInfo.mat = prompt(promptMessage);
+console.log('Personlighetstyp (gul, grön, röd, blå)');
+personalInfo.personalityType = prompt(promptMessage);
+console.log('Födelsemånad (1-12)');
+const date = {
+	month: 1,
+	day: 1
+};
+date.month = prompt(promptMessage);
+console.log('Födelsedag (1-31) \n');
+date.day = prompt(promptMessage);
+console.log('Födelseår fyra siffror');
+personalInfo.birthYear = prompt(promptMessage);
+personalInfo.zodiac = zodiac.getSignByDate(date);
+
+pathjson.push(personalInfo);
+fs.writeFileSync('./www/public/group-4/data.json', JSON.stringify(pathjson),'utf-8');
+personalInfo._SECRET_KEY = uuidv4();
+
+
 
 function execute(input) {
-	console.log(input)
+    console.log(input)
 	let command = input.split(' ');
 	switch (command[0]) {
-		case 'www':
-			open(`http://localhost:${process.env.EXPRESS_PORT || 3000}`)
-			break
-		case 'api':
-			open(`http://localhost:${process.env.EXPRESS_PORT || 3000}/api`)
-			break
+        case 'www':
+            open(`http://localhost:${process.env.EXPRESS_PORT || 3000}`)
+            break
+        case 'api':
+            open(`http://localhost:${process.env.EXPRESS_PORT || 3000}/api`)
+            break
 		case 'list':
-			console.debug([...students(), ...teachers()]); // merge the two arrays of student- and teacher-objects
+			console.debug([ ...students(), ...teachers() ]); // merge the two arrays of student- and teacher-objects
 			break;
 		case 'students':
 			console.debug(students());
@@ -105,7 +108,7 @@ function execute(input) {
 		case 'quit':
 		case 'q':
 			console.log('Exiting front end');
-			pm2.stop('all')
+            pm2.stop('all')
 			process.exit()
 		case 'help':
 		default:
