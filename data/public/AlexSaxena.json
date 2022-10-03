@@ -1,0 +1,99 @@
+{
+  "users": [
+    {
+      "firstname": "Alex",
+      "lastname": "Saxena",
+      "discord": "HisLordship#3680",
+      "github": "AlexSaxena",
+      "hobby": "gaming",
+      "food": "Chicken Tikka Masala",
+      "Frontend/Backend": "Backend",
+      "personalityType": "gul",
+      "birthYear": "1994",
+      "zodiac": {
+        "name": "Sagittarius",
+        "element": "fire",
+        "stone": "topaz",
+        "symbol": "♐",
+        "dateMin": "2000-11-23",
+        "dateMax": "2000-12-21"
+      }
+    },
+    {
+      "firstname": "Andreas",
+      "lastname": "Warncke",
+      "discord": "andreas.warncke#4447",
+      "github": "andreas8151",
+      "hobby": "Music",
+      "food": "Pizza",
+      "Frontend/Backend": "frontend",
+      "personalityType": "blå",
+      "birthYear": "1996",
+      "zodiac": {
+        "name": "Virgo",
+        "element": "earth",
+        "stone": "carnelian",
+        "symbol": "♍",
+        "dateMin": "2000-08-23",
+        "dateMax": "2000-09-23"
+      }
+    },
+    {
+      "firstname": "Alexander",
+      "lastname": "Wiklöw",
+      "discord": "Speedster#4680",
+      "github": "AlexanderWiklow",
+      "hobby": "Movies and travelling",
+      "food": "Tacos",
+      "Frontend/Backend": "Frontend",
+      "personalityType": "Gul",
+      "birthYear": "1987",
+      "zodiac": {
+        "name": "Sagittarius",
+        "element": "fire",
+        "stone": "topaz",
+        "symbol": "♐",
+        "dateMin": "2000-11-23",
+        "dateMax": "2000-12-21"
+      }
+    },
+    {
+      "firstname": "Anton",
+      "lastname": "Otternäs",
+      "discord": "AntonMUPP#6750",
+      "github": "AntonMUPPP",
+      "hobby": "gaming",
+      "food": "Hamburger",
+      "Frontend/Backend": "Backend",
+      "personalityType": "grön",
+      "birthYear": "2003",
+      "zodiac": {
+        "name": "Cancer",
+        "element": "water",
+        "stone": "emerald",
+        "symbol": "♋",
+        "dateMin": "2000-06-22",
+        "dateMax": "2000-07-22"
+      }
+    },
+    {
+      "firstname": "Araceli",
+      "lastname": "Prieto Gallego",
+      "discord": "ara.exe#8584",
+      "github": "arapg",
+      "hobby": "läsa",
+      "food": "Spaghetti Bolognese",
+      "Frontend/Backend": "Frontend",
+      "personalityType": "grön",
+      "birthYear": "2001",
+      "zodiac": {
+        "name": "Gemini",
+        "element": "air",
+        "stone": "agate",
+        "symbol": "♊",
+        "dateMin": "2000-05-22",
+        "dateMax": "2000-06-21"
+      }
+    }
+  ]
+}
